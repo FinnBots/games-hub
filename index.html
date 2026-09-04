@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>FinnBots — Play</title>
+<meta name="description" content="A growing world of games built around the FinnBots — 3,000 robots on Solana." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Jersey+15&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --plum:#5f4c57; --plum-deep:#3e323a; --bg-soft:#fdf3e7; --card:#fffaf3; --ink:#2a2230;
+    --muted:#6e6470; --electric:#3a6ff7; --amber:#f2a03d; --line:rgba(95,76,87,0.16);
+    --shadow-sm:0 1px 3px rgba(42,34,48,0.10); --shadow-md:0 6px 18px rgba(42,34,48,0.12); --shadow-lg:0 14px 34px rgba(42,34,48,0.22);
+    --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:22px; --r-pill:9999px;
+    --font-display:'Jersey 15', ui-monospace, monospace;
+    --font-body:'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg-soft:#221b20; --card:#2f2730; --ink:#f4eef2; --muted:#b9aab3; --line:rgba(255,255,255,0.12);
+      --shadow-md:0 6px 18px rgba(0,0,0,0.42); --shadow-lg:0 14px 34px rgba(0,0,0,0.55); }
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ font-family:var(--font-body); background:var(--bg-soft); color:var(--ink); line-height:1.4; -webkit-font-smoothing:antialiased;
+    min-height:100dvh; padding: max(20px, env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom)); }
+  .page{ max-width:820px; margin:0 auto; }
+
+  header{ text-align:center; margin-bottom:22px; }
+  .logo{ font-family:var(--font-display); font-size:clamp(34px,8vw,56px); color:var(--plum); letter-spacing:1px; line-height:1; }
+  .logo .b{ color:var(--amber); }
+  .tag{ color:var(--muted); font-size:clamp(13px,1.8vw,16px); margin-top:8px; }
+
+  .grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:14px; }
+  .game{ display:flex; flex-direction:column; background:var(--card); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-md); text-decoration:none; color:inherit; transition:transform .15s ease, box-shadow .15s ease; }
+  .game:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .game:focus-visible{ outline:3px solid var(--electric); outline-offset:2px; }
+  .thumb{ position:relative; aspect-ratio:16/9; background:var(--plum); overflow:hidden; }
+  .thumb img{ width:100%; height:100%; object-fit:cover; }
+  .thumb .fallback{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); color:#fff; font-size:28px; background:var(--plum-deep); }
+  .badge{ position:absolute; top:10px; left:10px; font-family:var(--font-display); font-size:13px; letter-spacing:.5px; padding:3px 10px; border-radius:var(--r-pill); color:#4a2c10; background:var(--amber); box-shadow:var(--shadow-sm); }
+  .badge.free{ background:#34c759; color:#08351a; }
+  .body{ padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .body h2{ font-family:var(--font-display); font-size:clamp(19px,2.6vw,24px); color:var(--ink); }
+  .body p{ font-size:13.5px; color:var(--muted); flex:1; }
+  .play{ margin-top:6px; align-self:flex-start; font-family:var(--font-body); font-weight:700; font-size:14px; color:var(--plum); }
+  .play::after{ content:' →'; }
+
+  .secondary{ margin-top:18px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .chip{ text-decoration:none; font-weight:600; font-size:13px; color:var(--plum); background:var(--card); border:1px solid var(--line); padding:9px 16px; border-radius:var(--r-pill); box-shadow:var(--shadow-sm); }
+  .chip:hover{ border-color:var(--amber); }
+
+  footer{ margin-top:26px; text-align:center; color:var(--muted); font-size:12px; line-height:1.7; }
+  footer a{ color:var(--plum); }
+  .mint{ font-family:ui-monospace, monospace; font-size:10.5px; word-break:break-all; opacity:.8; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">FINN<span class="b">BOTS</span></div>
+      <div class="tag">3,000 robots on Solana — and a growing world of games.</div>
+    </header>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="secondary">
+      <a class="chip" href="https://holders.finnstergram.com">🤖 Holder Dashboard</a>
+      <a class="chip" href="https://magiceden.io/marketplace/finnbot" target="_blank" rel="noopener">🛒 Get a Bot on Magic Eden</a>
+    </div>
+
+    <footer>
+      <div>$OIL is the FinnBots token on Solana. Always check the contract before trading — an unrelated coin shares the ticker.</div>
+      <div class="mint">$OIL mint: HrcfXJcFdMoLfbkN5qCTSFrLsAgJNHitmwKc5AyS7xzf</div>
+      <div style="margin-top:8px;">Made by Martin &amp; Finn.</div>
+    </footer>
+  </div>
+
+<script>
+  var ARWEAVE='https://arweave.net/_cPSCheRvzVBlZK7QwM-3nXtteMdBbUn-zJhbGRlMmo';
+  var GAMES=[
+    { bot:2106, badge:'NEW', badgeClass:'', name:'Bot Merge', url:'https://merge.finnstergram.com',
+      desc:'Drag matching Bots together to merge them. Free to play — race the clock and climb the ladder!', free:true },
+    { bot:106, badge:'$OIL', name:'Pick-a-Bot', url:'https://play.finnstergram.com',
+      desc:'Pick 1 of 10. Match the Bot to win $OIL — holders get a 1.5× bonus.' },
+    { bot:1620, badge:'$OIL', name:'Spot-a-FinnBot', url:'https://spot.finnstergram.com',
+      desc:'Find the hidden FinnBot before the 45-second timer runs out. Win $OIL.' },
+    { bot:710, badge:'$OIL', name:'Flappy Bot', url:'https://flap.finnstergram.com',
+      desc:'New here? Flap through the pipes and pick up your first $OIL to get started.' },
+    { bot:1150, badge:'$OIL', name:'Pipeline', url:'https://pipe.finnstergram.com',
+      desc:'Steer the Bot, connect pipe segments, and pick up your first $OIL. Free to play.' },
+  ];
+  function card(g){
+    var free = g.free ? 'free' : '';
+    return '<a class="game" href="'+g.url+'">'
+      + '<div class="thumb"><span class="badge '+free+'">'+g.badge+'</span>'
+      + '<img src="'+ARWEAVE+'/'+g.bot+'.png" alt="FinnBot #'+g.bot+'" loading="lazy" '
+      + 'onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:\'#'+g.bot+'\',className:\'fallback\'}));" /></div>'
+      + '<div class="body"><h2>'+g.name+'</h2><p>'+g.desc+'</p><span class="play">Play</span></div></a>';
+  }
+  document.getElementById('grid').innerHTML = GAMES.map(card).join('');
+</script>
+</body>
+</html>
