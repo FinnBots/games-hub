@@ -1,8 +1,8 @@
 file=index.html
-sha256=f8639da29f058e8713efabb9ba0844021d0cb186217a3112875a4bd540d9401c
-bytes=6877
+sha256=0ab5ffefc3477b49ef3342369e2b8a0cf4e40a457528c9f3c14d622359615d3b
+bytes=7093
 test_mode=false
 prod_mint_count=1
 prod_treasury_count=0
-marker=Mr Bot
-generated=2026-09-09T08:09:16Z
+marker=Bot Pong
+generated=2026-09-10T01:59:10Z
