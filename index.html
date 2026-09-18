@@ -101,34 +101,34 @@
 <script>
   var ARWEAVE='https://arweave.net/_cPSCheRvzVBlZK7QwM-3nXtteMdBbUn-zJhbGRlMmo';
   var GAMES=[
-    {"bot": 110, "badge": "FREE + $OIL", "badgeClass": "both", "name": "TERRABOT", "url": "https://stack.finnstergram.com", "desc": "Drop parts, clear rows, chase a BAY \u2014 the FinnBots stacker.", "free": true, "oil": true},
-    {"bot": 109, "badge": "FREE + $OIL", "badgeClass": "both", "name": "BOTRUN", "url": "https://run.finnstergram.com", "desc": "Bot 106 points the nose down the coast in a FinnBots Out Run-style dash \u2014 beat the clock to each checkpoint, shift Low/High, pick your fork, and drive one of five branching routes to a GOAL. Play free, or pay 25 $OIL for a ranked run.", "free": true, "oil": true, "live": true},
+    {"bot": 2427, "badge": "FREE + $OIL", "badgeClass": "both", "name": "TERRABOT", "url": "https://stack.finnstergram.com", "desc": "Drop parts, clear rows, chase a BAY \u2014 the FinnBots stacker.", "free": true, "oil": true},
+    {"bot": 2474, "badge": "FREE + $OIL", "badgeClass": "both", "name": "BOTRUN", "url": "https://run.finnstergram.com", "desc": "Bot 106 points the nose down the coast in a FinnBots Out Run-style dash \u2014 beat the clock to each checkpoint, shift Low/High, pick your fork, and drive one of five branching routes to a GOAL. Play free, or pay 25 $OIL for a ranked run.", "free": true, "oil": true, "live": true},
     {"bot": 108, "badge": "FREE + $OIL", "badgeClass": "both", "name": "HOP 106", "url": "https://hop.finnstergram.com", "desc": "Get Bot 106 home \u2014 hop across five lanes of traffic and a five-lane river into the bays. Play free, or pay 25 $OIL for a ranked run.", "free": true, "oil": true, "live": true},
     // Each game carries free + oil flags — a game can be BOTH (play free OR for $OIL).
     // badge is the tile label; badgeClass tints it; the Free/$OIL filter reads free/oil.
-    { bot:107,  badge:'FREE + $OIL', badgeClass:'both', name:'WING 106', url:'https://wing.finnstergram.com',
+    { bot:2239,  badge:'FREE + $OIL', badgeClass:'both', name:'WING 106', url:'https://wing.finnstergram.com',
       desc:'Hold the bay as Bot 106 \u2014 the swarm convoys in, parks, and dive-bombs. Dodge the tractor beam or get captured; rescue your red 106 for a dual wing. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
     { bot:106,  badge:'FREE + $OIL', badgeClass:'both', name:'BotFord', url:'https://dig.finnstergram.com',
       desc:'Boulder Dash-style cave digger \u2014 Bot 106 digs the vault, drops drums, banks the Beads, and races the clock to the bay. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
     { bot:248,  badge:'FREE + $OIL', badgeClass:'both', name:'Sparkpede', url:'https://spark.finnstergram.com',
       desc:'Bot #106 blasts the descending Sparkpede \u2014 zap it before it winds through the mushrooms and reaches you. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
-    { bot:911,  badge:'FREE + $OIL', badgeClass:'both', name:'Bot Jumper', url:'https://jump.finnstergram.com',
+    { bot:2944,  badge:'FREE + $OIL', badgeClass:'both', name:'Bot Jumper', url:'https://jump.finnstergram.com',
       desc:'Bot #106 bounces up an endless erupting volcano: steer, grab oil and outrun the rising lava. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
     { bot:451,  badge:'FREE + $OIL', badgeClass:'both', name:'Bot Smash', url:'https://smash.finnstergram.com',
       desc:'Bot #106 is the bead \u2014 smash the wall, survive the ramp, clear wave after wave. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
-    { bot:305,  badge:'FREE + $OIL', badgeClass:'both', name:'Mr Bot', url:'https://mrbot.finnstergram.com',
+    { bot:641,  badge:'FREE + $OIL', badgeClass:'both', name:'Mr Bot', url:'https://mrbot.finnstergram.com',
       desc:'Fetch the parts, then stack the Bot across two screens. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
     { bot:2106, badge:'FREE + $OIL', badgeClass:'both', name:'Bot Merge', url:'https://merge.finnstergram.com',
       desc:'Drag matching Bots together to merge them. Play free, or pay 25 $OIL for a ranked run.', free:true, oil:true, live:true },
-    { bot:512,  badge:'FREE', badgeClass:'free', name:'Bot Pong', url:'https://pong.finnstergram.com',
+    { bot:218,  badge:'FREE', badgeClass:'free', name:'Bot Pong', url:'https://pong.finnstergram.com',
       desc:'Classic Pong against Cam. First to 11 \u2014 the ball speeds up every rally. Free to play.', free:true, oil:false },
     { bot:710,  badge:'EARN $OIL', badgeClass:'earn', name:'Flappy Bot', url:'https://flap.finnstergram.com',
       desc:'New here? Flap through the pipes and pick up your first $OIL to get started \u2014 free to play.', free:true, oil:true },
     { bot:1150, badge:'EARN $OIL', badgeClass:'earn', name:'Pipeline', url:'https://pipe.finnstergram.com',
       desc:'Steer the Bot, connect pipe segments, and pick up your first $OIL \u2014 free to play.', free:true, oil:true },
-    { bot:777,  badge:'$OIL', badgeClass:'', name:'Pick-a-Bot', url:'https://play.finnstergram.com',
+    { bot:2803,  badge:'$OIL', badgeClass:'', name:'Pick-a-Bot', url:'https://play.finnstergram.com',
       desc:'Pick 1 of 10. Match the Bot to win $OIL \u2014 holders get a 1.5\u00d7 bonus.', free:false, oil:true },
-    { bot:1620, badge:'$OIL', badgeClass:'', name:'Spot-a-FinnBot', url:'https://spot.finnstergram.com',
+    { bot:970, badge:'$OIL', badgeClass:'', name:'Spot-a-FinnBot', url:'https://spot.finnstergram.com',
       desc:'Find the hidden FinnBot before the 45-second timer runs out. Win $OIL.', free:false, oil:true },
   ];
   function card(g){
